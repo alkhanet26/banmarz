@@ -112,7 +112,9 @@ mkdir -p /etc/data
 #domain
 read -rp "Masukkan Domain: " domain
 echo "$domain" > /etc/data/domain
+echo "*.$domain" > /etc/data/wcdomain
 domain=$(cat /etc/data/domain)
+wcdomain=$(cat /etc/data/wcdomain)
 
 #email
 read -rp "Masukkan Email anda: " email
@@ -254,8 +256,8 @@ apt install socat cron bash-completion -y
 
 #install cert
 curl https://get.acme.sh | sh -s email=$email
-/root/.acme.sh/acme.sh --server letsencrypt --register-account -m $email --issue -d $domain --standalone -k ec-256 --debug
-~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /var/lib/marzban/xray.crt --keypath /var/lib/marzban/xray.key --ecc
+/root/.acme.sh/acme.sh --server letsencrypt --register-account -m $email --issue -d $domain $wcdomain --standalone -k ec-256 --debug
+~/.acme.sh/acme.sh --installcert -d $domain $wcdomain --fullchainpath /var/lib/marzban/xray.crt --keypath /var/lib/marzban/xray.key --ecc
 wget -O /var/lib/marzban/xray_config.json "https://raw.githubusercontent.com/GawrAme/MarLing/main/xray_config.json"
 
 #install firewall
