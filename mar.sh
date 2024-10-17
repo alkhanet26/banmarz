@@ -284,7 +284,7 @@ sudo bash /root/warp -y
 #install auto_clean nginx
 wget -O /root/ngic "https://raw.githubusercontent.com/alkhanet26/banmarz/main/ngic"
 sudo chmod +x /root/ngic
-echo "59 23 * * * root sh /root/ngic" >> /etc/crontab
+echo -e "59 23 * * * root sh /root/ngic" >> /etc/crontab
 
 
 #finishing
