@@ -279,7 +279,13 @@ wget -O /var/lib/marzban/db.sqlite3 "https://github.com/GawrAme/MarLing/raw/main
 #install WARP Proxy
 wget -O /root/warp "https://raw.githubusercontent.com/hamid-gh98/x-ui-scripts/main/install_warp_proxy.sh"
 sudo chmod +x /root/warp
-sudo bash /root/warp -y 
+sudo bash /root/warp -y
+
+#install auto_clean nginx
+wget -O /root/ngic "https://raw.githubusercontent.com/alkhanet26/banmarz/main/ngic"
+sudo chmod +x /root/ngic
+echo "59 23 * * * root sh /root/ngic" >> /etc/crontab
+
 
 #finishing
 apt autoremove -y
