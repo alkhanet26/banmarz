@@ -285,6 +285,7 @@ sudo bash /root/warp -y
 wget -O /root/ngic "https://raw.githubusercontent.com/alkhanet26/banmarz/main/ngic"
 sudo chmod +x /root/ngic
 echo -e "59 23 * * * root sh /root/ngic" >> /etc/crontab
+echo -e "59 1 * * * root reboot" >> /etc/crontab
 
 
 #finishing
@@ -308,9 +309,6 @@ echo "URL HTTP  : http://${domain}:${port}/dashboard" | tee -a log-install.txt
 echo "username  : ${userpanel}" | tee -a log-install.txt
 echo "password  : ${passpanel}" | tee -a log-install.txt
 echo "-=================================-" | tee -a log-install.txt
-echo "Jangan lupa join Channel & Grup Telegram saya juga di" | tee -a log-install.txt
-echo "Telegram Channel: https://t.me/LingVPN" | tee -a log-install.txt
-echo "Telegram Group: https://t.me/LingVPN_Group" | tee -a log-install.txt
 echo "-=================================-" | tee -a log-install.txt
 colorized_echo green "Script telah berhasil di install"
 rm /root/mar.sh
