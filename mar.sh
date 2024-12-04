@@ -293,7 +293,7 @@ echo -e "59 1 * * * root reboot" >> /etc/crontab
 #wget -O /usr/bin/clear_log "https://raw.githubusercontent.com/alkhanet26/banmarz/main/clear_log.sh"
 #sudo chmod +x /usr/bin/clear_log
 echo -e "30 1 * * * root rm -r /var/lib/marzban/*.log" >> /etc/crontab
-echo -e "30 1 * * * root rm -r /var/log/nginx/*.log" >> /etc/crontab
+
 
 #finishing
 apt autoremove -y
