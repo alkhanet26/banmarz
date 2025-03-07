@@ -1,13 +1,10 @@
 #!/bin/sh
 # Script By Alkahanet
 
-
-systemctl stop nginx
-rm -r /var/log/nginx
-mkdir -p /var/log/nginx
-touch /var/log/nginx/access.log
-touch /var/log/nginx/error.log
+rm -r /var/lib/marzban/access.log
+rm -r /var/lib/marzban/error.log
 sleep 3
-systemctl start nginx
+marzban restart > /dev/null
 sleep 5
-systemctl restart nginx
+clear
+exit 0
