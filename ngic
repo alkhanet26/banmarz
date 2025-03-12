@@ -1,10 +1,12 @@
 #!/bin/sh
 # Script By Alkahanet
 
+marzban down
+sleep 2
 rm -r /var/lib/marzban/access.log
 rm -r /var/lib/marzban/error.log
 sleep 3
-marzban restart > /dev/null
+marzban up > /dev/null
 sleep 5
 clear
 exit 0
