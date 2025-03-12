@@ -9,4 +9,4 @@ sleep 3
 marzban up
 sleep 5
 clear
-exit 0
+profile
